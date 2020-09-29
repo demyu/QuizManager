@@ -20,7 +20,7 @@ class DBHelper {
 
   Future<Database> initializeDatabase() async {
     return await openDatabase(
-      join(await getDatabasesPath(), 'proto2.db'),
+      join(await getDatabasesPath(), 'proto3.db'),
       onCreate: (db, version) {
         String table1 = """CREATE TABLE player(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -100,6 +100,6 @@ class DBHelper {
 
   Future<int> deleteQuestion(int id) async {
     var db = await this.getDatabase();
-    return await db.delete('question', where: 'id = ?', whereArgs: [id]);
+    return await db.delete('questions', where: 'id = ?', whereArgs: [id]);
   }
 }
