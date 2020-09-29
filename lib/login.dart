@@ -9,7 +9,6 @@ class Login extends StatefulWidget {
 }
 
 class LoginState extends State<Login> {
-
   final name = TextEditingController();
   final password = TextEditingController();
   final snackBar = SnackBar(content: Text('Invalid Credentials'));
@@ -64,7 +63,7 @@ class LoginState extends State<Login> {
                     MaterialPageRoute(
                         builder: (_) => QuestionList(
                             ))):
-                    Scaffold.of(context).showSnackBar(snackBar);
+                     print("");
                     },
               child: Center(child: Text("Login")))
         ]

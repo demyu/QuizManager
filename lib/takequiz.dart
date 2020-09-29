@@ -37,13 +37,17 @@ class TakeQuizState extends State<TakeQuiz> {
     if (itemnav < lastnav) {
       if (questions[itemnav].getAns() == selected) {
         score += 1;
-        itemnav += 1;
-      } if(itemnav == lastnav) {
+      } 
+      if(itemnav == lastnav-1) {
         Player temp = Player(name.text, score);
         db.addPlayer(temp);
         widget.homeScreenState.load();
         Navigator.pop(context);
       }
+      itemnav += 1;
+      setState(() {
+        
+      });
     }
   }
 
